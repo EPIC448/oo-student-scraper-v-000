@@ -2,7 +2,7 @@ require 'open-uri'
 
 class Scraper
   # this is our scraper OBJECT class..
-  
+
   def self.scrape_index_page(index_url)
     index_page = Nokogiri::HTML(open(index_url))
     students = []

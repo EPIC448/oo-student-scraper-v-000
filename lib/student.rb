@@ -1,3 +1,4 @@
+require 'pry'
 class Student
  
   # this is template to create OBJECT such STUDENT () will haave a name, location... 
@@ -10,25 +11,37 @@ class Student
 
   @@all = []
 
-  def initialize(student_hash) # from line 25 in student.rb
+  def initialize(student_hash) # from line 37 in student.rb
     student_hash.each do |key, value|
             #keys are all attr_accessor.. name , location etc
       self.send("#{key}=", value)
 
-            # line 10 ... our hash keys used to call a attr_writer .... through attr_accessor
+            # line 17 ... our hash keys used to a attr_writer .... through attr_accessor. with the help of .send
             # this is where we are using the collected hash as an object.  
             # self.name = student_hash[:name]  
             # self.location = stuent_hash[:location]
             # student.profile_url = student_hash[:profile_url]
+            # example.. https://stackoverflow.com/questions/3337285/what-does-send-do-in-ruby
 
     end
     @@all << self
+  
   end
 
-  def self.create_from_collection(students_array)
+
+  def self.all
+    @@all # call it from line 27 student.rb
+  end
+
+
+  def self.create_from_collection(students_array) # it comes in as an array
     students_array.each do |student_hash|
-      # we are using the hash to create a new instance od student. 
-      Student.new(student_hash) #
+
+       # student_hash just a representation what is provided as student_array
+       # is looped over. i.e {:name=>"Alex Patriquin", :location=>"New York, NY"}
+       # we are using the hash to create a new instance of student. 
+      
+       Student.new(student_hash) # then we call the instance of the class Student with result from line 30
     end
   end
 
@@ -39,8 +52,6 @@ class Student
     self
   end
 
-  def self.all
-    @@all
-  end
+  
 end
 

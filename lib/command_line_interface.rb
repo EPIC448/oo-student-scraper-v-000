@@ -2,6 +2,7 @@ require_relative "../lib/scraper.rb"
 require_relative "../lib/student.rb"
 require 'nokogiri'
 require 'colorize'
+require
 
 
 class CommandLineInteface
@@ -16,9 +17,8 @@ class CommandLineInteface
   def make_students
     students_array = Scraper.scrape_index_page(BASE_PATH + 'index.html')
               # BASE_PATH is link HTML
-
               # class method on line 20 is located in student.rb... we created that
-    Student.create_from_collection(students_array) 
+    Student.create_from_collection(students_array)   #line 28 in student.rb
   end
 
   def add_attributes_to_students
