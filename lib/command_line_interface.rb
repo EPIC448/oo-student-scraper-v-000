@@ -15,7 +15,10 @@ class CommandLineInteface
 
   def make_students
     students_array = Scraper.scrape_index_page(BASE_PATH + 'index.html')
-    Student.create_from_collection(students_array)
+              # BASE_PATH is link HTML
+
+              # class method on line 20 is located in student.rb... we created that
+    Student.create_from_collection(students_array) 
   end
 
   def add_attributes_to_students
