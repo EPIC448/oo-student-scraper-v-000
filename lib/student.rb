@@ -45,8 +45,9 @@ class Student
 
 
 
-  def add_student_attributes(attributes_hash)
-    attributes_hash.each do |attr, value|
+  def add_student_attributes(attributes_hash) # used in command line 29. attribute_hash is passed in
+    #attr  in this case is a KEY =  :twitter and VALUE = "https://twitter.com/empireofryan"
+    attributes_hash.each do |attr, value| 
       self.send("#{attr}=", value)
     end
     self
