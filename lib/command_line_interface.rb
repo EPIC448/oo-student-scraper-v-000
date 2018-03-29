@@ -2,7 +2,6 @@ require_relative "../lib/scraper.rb"
 require_relative "../lib/student.rb"
 require 'nokogiri'
 require 'colorize'
-require
 
 
 class CommandLineInteface
@@ -27,6 +26,7 @@ class CommandLineInteface
       student.add_student_attributes(attributes)
     end
   end
+  
 
   def display_students
     Student.all.each do |student|

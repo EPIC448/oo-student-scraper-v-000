@@ -1,4 +1,3 @@
-require 'pry'
 class Student
  
   # this is template to create OBJECT such STUDENT () will haave a name, location... 
@@ -25,7 +24,6 @@ class Student
 
     end
     @@all << self
-  
   end
 
 
@@ -44,6 +42,8 @@ class Student
        Student.new(student_hash) # then we call the instance of the class Student with result from line 30
     end
   end
+
+
 
   def add_student_attributes(attributes_hash)
     attributes_hash.each do |attr, value|
