@@ -7,7 +7,7 @@ require 'pry'
 #Note: to run CLI or run an methods in it you say.. you say...  ruby ./bin/run
 
 class CommandLineInteface
-  BASE_PATH = "./fixtures/student-site/"
+  BASE_PATH = "./fixtures/student-site/"  #this is the preset website.
 
   def run
     make_students
@@ -34,7 +34,6 @@ class CommandLineInteface
   def display_students  # combines it all together for display
      # break this down.
     Student.all.each do |student|
-      binding.pry
       puts "#{student.name.upcase}".colorize(:blue)
       puts "  location:".colorize(:light_blue) + " #{student.location}"
       puts "  profile quote:".colorize(:light_blue) + " #{student.profile_quote}"
