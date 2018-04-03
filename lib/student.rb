@@ -21,7 +21,6 @@ class Student
             # self.location = stuent_hash[:location]
             # student.profile_url = student_hash[:profile_url]
             # example.. https://stackoverflow.com/questions/3337285/what-does-send-do-in-ruby
-
     end
     @@all << self
   end
