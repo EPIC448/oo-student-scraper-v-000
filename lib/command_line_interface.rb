@@ -9,7 +9,7 @@ require 'pry'
 class CommandLineInteface
   BASE_PATH = "./fixtures/student-site/"  #this is the preset website.
 
-  def run
+  def call
     make_students
     add_attributes_to_students
     display_students
