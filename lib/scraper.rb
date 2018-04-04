@@ -27,6 +27,7 @@ class Scraper
   def self.scrape_profile_page(profile_slug)
     student = {}
     profile_page = Nokogiri::HTML(open(profile_slug))
+    binding.pry
     links = profile_page.css(".social-icon-container").children.css("a").map { |el| el.attribute('href').value}
     
     links.each do |link|  #spits out = ["https://twitter.com/jmburges", "https://www.linkedin.com/in/jmburges", "https://github.com/jmburges", "http://joemburgess.com/"]
