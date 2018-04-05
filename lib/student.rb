@@ -45,8 +45,7 @@ class Student
     #attr  in this case is a KEY =  :twitter and VALUE = "https://twitter.com/empireofryan"
     attributes_hash.each do |attr, value| 
       self.send("#{attr}=", value)
-      binding.pry
-
+    
     end
     self
   end

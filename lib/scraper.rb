@@ -27,7 +27,7 @@ class Scraper
   def self.scrape_profile_page(profile_slug)
     student = {}
     profile_page = Nokogiri::HTML(open(profile_slug))
-    binding.pry
+  
     links = profile_page.css(".social-icon-container").children.css("a").map { |el| el.attribute('href').value}
     
     links.each do |link|  #spits out = ["https://twitter.com/jmburges", "https://www.linkedin.com/in/jmburges", "https://github.com/jmburges", "http://joemburgess.com/"]
@@ -39,13 +39,13 @@ class Scraper
         student[:twitter] = link  # include the regular link
       else
         student[:blog] = link
+      
       end
     end
   # we use IF ElSE STATMENT here in a stright line... Line 44..
     student[:profile_quote] = profile_page.css(".profile-quote").text if profile_page.css(".profile-quote")
      
     student[:bio] = profile_page.css("div.bio-content.content-holder div.description-holder p").text if profile_page.css("div.bio-content.content-holder div.description-holder p")
-
     student  # Call it 
   end
 

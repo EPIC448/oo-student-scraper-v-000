@@ -12,7 +12,7 @@ class CommandLineInteface
   def call
     make_students
     add_attributes_to_students
-    display_students
+    display_students   #line 34 in command_line_interface
   end
 
   def make_students
@@ -31,9 +31,10 @@ class CommandLineInteface
   end
 
 
-  def display_students  # combines it all together for display
+  def display_students  
+    # combines it all together for display in 
      # break this down.
-    Student.all.each do |student|
+    Student.all.each do |student| #line 26 on command_line_interface
       puts "#{student.name.upcase}".colorize(:blue)
       puts "  location:".colorize(:light_blue) + " #{student.location}"
       puts "  profile quote:".colorize(:light_blue) + " #{student.profile_quote}"
