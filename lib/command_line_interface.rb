@@ -1,7 +1,7 @@
 require_relative "../lib/scraper.rb"
 require_relative "../lib/student.rb"
 require 'nokogiri'
-require 'colorize'
+require 'colorize'  #just to add color to the output.
 require 'pry'
  
 #Note: to run CLI or run an methods in it you say.. you say...  ruby ./bin/run
@@ -19,13 +19,16 @@ class CommandLineInteface
     students_array = Scraper.scrape_index_page(BASE_PATH + 'index.html')
               # BASE_PATH is link HTML
               # class method on line 20 is located in student.rb... we created that
-    Student.create_from_collection(students_array)   #line 28 in student.rb
+
+              Student.create_from_collection(students_array)   #line 28 in student.rb
   end
 
   def add_attributes_to_students
     Student.all.each do |student|
+      #scraper.rb line #27  
+      # + we are saying give me student.profile.url, then scraper of that.
       attributes = Scraper.scrape_profile_page(BASE_PATH + student.profile_url) #scraper.rb line #27
-       # then we pass in "attributes" in as a argument.
+      # then we pass in "attributes" in as a argument.
       student.add_student_attributes(attributes) #in student.rb line #48
     end
   end
