@@ -21,7 +21,6 @@ class Scraper
         students << {name: name, location: location, profile_url: url}
       end
     end
-    binding.pry
 
     students   #return student an use it in another method.
   end
