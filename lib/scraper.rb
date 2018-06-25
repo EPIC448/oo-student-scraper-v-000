@@ -10,7 +10,7 @@ class Scraper
     student_list = Nokogiri::HTML(open(index_url))
     students = []
     student_list.css("div.roster-cards-container").each do |card|  #iterate 1st step
-      card.css('.student-card a').each do |student| #iterate 2nd step deeper.
+       card.css('.student-card a').each do |student| #iterate 2nd step deeper.
         #when is has a dot  "." means is a class...
         url = "#{student.attr('href')}" #attr get the element of a certian attributes in a inspect   webpage.
         name = student.css('.student-name').text
