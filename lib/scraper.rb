@@ -17,11 +17,12 @@ class Scraper
         url = "#{student.attr('href')}" #attr get the element of a certian attributes in a inspect   webpage.
         name = student.css('.student-name').text
         location = student.css('.student-location').text
-        binding.pry
 
         students << {name: name, location: location, profile_url: url}
       end
     end
+    binding.pry
+
     students   #return student an use it in another method.
   end
 
