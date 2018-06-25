@@ -25,7 +25,6 @@ class Student
     # Do something with the key and value}
     attributes_hash.each {|key, value| self.send(("#{key}="), value)} #example in the Mass Assignment and Metaprogramming
 
-
     end
 
 
